@@ -16,29 +16,44 @@ body{
 /* PHONE FRAME */
 .container{
     width: 380px;
-    height: 100vh;   /* FULL SCREEN HEIGHT */
+    height: 100vh;
     background: black;
-    overflow: hidden;
+
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-/* SHORT */
+.container::-webkit-scrollbar{
+    display: none;
+}
+
+/* EACH SHORT */
 .short{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: relative;
+    overflow: hidden;
+
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
-/* IMAGE FIX (MOST IMPORTANT) */
+/* IMAGE */
 .main-img{
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover;   /* fills full height */
+    object-fit: cover;
     top: 0;
     left: 0;
 }
 
-/* RIGHT SIDE */
+/* RIGHT SIDE ICONS */
 .right{
     position: absolute;
     right: 10px;
@@ -69,7 +84,11 @@ body{
     margin-top: 4px;
 }
 
-/* BOTTOM TEXT */
+.right h4{
+    cursor: pointer;
+}
+
+/* BOTTOM AREA */
 .bottom{
     position: absolute;
     bottom: 0;
@@ -97,16 +116,13 @@ body{
     padding: 6px 14px;
     border-radius: 18px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .bottom h3{
     margin-top: 10px;
 }
 
-.right h4{
-    cursor: pointer
-}
-
-button {
-    cursor: pointer;
+.love{
+    color: royalblue;
 }
